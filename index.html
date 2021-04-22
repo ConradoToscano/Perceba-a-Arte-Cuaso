@@ -1,0 +1,143 @@
+<html>
+    <head>
+
+        <meta charset="utf-8" />
+        <title>Perceba a Arte Cuaso</title>
+        <meta name="viewport" content="initial-scale=1,maximum-scale=1,user-scalable=no" />
+
+        <meta property="og:title" content="Perceba a Arte Cuaso" />
+        <meta property="og:image" content="./img/printmapa.png" />
+        <meta property="og:url" content="https://www.percebaaartecuaso.com" />
+        <meta property="og:description" content="Perceba a Arte Cuaso é um mapa interativo que te permite explorar o patrimônio artistico-cultural do campus Cidade-Universitária" />
+        <link rel='icon' href='./img/icon.png' type='image/x-icon'/>
+        <script src="https://api.mapbox.com/mapbox-gl-js/v1.9.1/mapbox-gl.js"></script>
+        <link rel="stylesheet" href="https://api.mapbox.com/mapbox-gl-js/v1.9.1/mapbox-gl.css"/>
+        <link rel="stylesheet" type="text/css" href="./css/main.css"></link>
+        <link rel="stylesheet" type="text/css" href="slick/slick.css"/>
+        <script type="text/javascript" src="https://code.jquery.com/jquery-1.11.0.min.js"></script>
+        <script type="text/javascript" src="https://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+        <script type="text/javascript" src="slick/slick.min.js"></script>
+        
+    </head>
+    <body>
+    
+        <div id="entrada" class="window landing" style="display:block">
+
+             <div class="content1">
+                <div class="slider-principal">
+                    <img src="./img/slider/relogiosolar1.png" >
+                    <img src="./img/slider/ultramarinho1.png" >
+                    <img src="./img/slider/lugarcomarco1.png" >
+                    <img src="./img/slider/marcobrasiljapao1.png" >
+                </div>
+            </div>
+            <div class="content2">
+                <div id="logo">
+                    <img src="./img/logo.png" height="150px">
+                </div>
+                <div id="enter" class="footer">
+                    <div class="close-btn">
+                        <button class="btn" onclick="enterMap()">Explore o mapa</button>
+                    </div>
+                </div>
+                <div id="redes">
+                    <img class="facebook" src="./img/facebook.png" width="35px" height="35px" href="#">
+                    <img src="./img/Instagram.png" width="35px" height="35px" href="#">
+                </div>
+                <div class="autoria">
+                    Por Reinaldo dos Santos<br>
+                     e Conrado Toscano
+                </div>
+            </div>
+
+        </div>
+
+        <div id="menu">
+            <button id="sobrebtn" class="btn circle-btn" title="Sobre" onclick="toggleWindow('JANELASOBRE')">
+                <img class="imagemmenu" src="./img/menu/sobre.svg"></img>
+            </button>
+    
+            <button id="obrasbtn" class="btn circle-btn" title="Obras" onclick="toggleWindow('JANELAOBRAS')">
+                <img class="imagemmenu" src="./img/menu/obras.svg"></img>
+            </button>
+    
+            <!-- <button id="museusbtn" class="btn circle-btn" title="Museus" onclick="toggleWindow('JANELAMUSEUS')">
+                <img class="imagemmenu" src="./img/menu/museus.svg"></img>
+            </button>
+    
+             <button id="prediosbtn" class="btn circle-btn" title="Prédios Tombados" onclick="toggleWindow('JANELAPREDIOS')">
+                <img class="imagemmenu" src="./img/menu/predios.svg"></img>
+            </button>  -->
+
+        </div>
+    
+        <div id="JANELASOBRE" class="janela menu" style="display: none;background-color: #c5653a;">
+            <img class="close" src="./img/close.svg" alt="fechar" onclick="toggleWindow('JANELASOBRE')">
+            <div class="header">
+                    <h2>Sobre</h2>
+            </div>
+            <div class="content">
+                <h3>Bem vindo à</h3>
+                <h1>Perceba a Arte Cuaso</h1>
+                <p> Este mapa pretende expor e facilitar o acesso à localização das Obras de Arte, Museus, e Prédios tombados localizados na USP, afim de valorizar o patrimônio artistico-cultural do Campus da Cidade Universitária e dar um primeiro passo em sua caracterização como um museu a céu aberto.  </p>
+                <p> O mapa é derivado da tese de mestrado <a href="https://www.teses.usp.br/teses/disponiveis/16/16132/tde-15122020-124950/pt-br.php"> "Esculturas no Campus Cidade Universitária Armando de Salles  Oliveira: arte e conservação" </a> de Reinaldo Luiz dos Santos, para saber mais como o projeto foi desenvolvido visite a<a href="https://www.github.com/meliharvey/sidewalkwidths-nyc"> página do GitHub</a>.</p>
+                <p><small>
+                O site é fruto do projeto de pesquisa "Perceba a arte do CUASO" orientado pela professora Fabiana Lopes de Oliveira e desenvolvido pelo aluno Conrado Toscano Freire </small></p>
+               
+            </div>
+        </div>
+
+        <div id="JANELAOBRAS" class="janela menu" style="display: none;background-color: #40754d;">
+            <img class="close" src="./img/close.svg" alt="fechar" onclick="toggleWindow('JANELAOBRAS')">
+            <div class="header">
+                    <h2>Obras Escultóricas</h2>
+            </div>
+            <div class="content">
+                <div id="imgjanelaobra" class="obraimg">
+                   
+                </div>
+                <div class="dropdown">
+                  <button id="obrasDropdownButton" onclick="toggleDropdown()" class="btn dropdown-btn">Obras</button>
+                  <div id="obrasDropdown" class="dropdown-content">
+                    <ul>
+                    </ul>
+                    </div>
+                </div>
+
+
+            </div>
+        </div>
+
+        <div id="JANELAMUSEUS" class="janela menu" style="display: none;background-color: #d6a322;">
+            <img class="close" src="./img/close.svg" alt="fechar" onclick="toggleWindow('JANELAMUSEUS')">
+            <div class="header">
+                    <h2>Museus</h2>
+            </div>
+            <div class="content">
+            </div>
+        </div>
+
+        <div id="JANELAPREDIOS" class="janela menu" style="display: none;background-color: #a1323f;">
+            <img class="close" src="./img/close.svg" alt="fechar" onclick="toggleWindow('JANELAPREDIOS')">
+            <div class="header">
+                    <h2>Prédios Tombados</h2>
+            </div>
+            <div class="content">
+            </div>
+        </div>
+        
+
+
+      <div id="map"></div>
+    
+    
+        <script src='https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-draw/v0.18.0/mapbox-gl-draw.js'></script>
+        <link rel="stylesheet" href="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-draw/v1.0.9/mapbox-gl-draw.css" type="text/css" />
+        <script src="js/settings.js"></script>
+        <script src="js/app.js"></script>
+        	
+				
+    
+    </body>
+</html>
+

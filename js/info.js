@@ -156,7 +156,7 @@ function conteudo(i){
              '</div>'+
          '</div>'+
      '</div>'+
-     '<div class="acordion-item">'+
+    /* '<div class="acordion-item">'+
          '<div class="C acordion-item-header">'+
              '<div class=" acordion-item-header-content">'+
                  'AUTOR'+
@@ -166,7 +166,7 @@ function conteudo(i){
              '<div id="autor" class="acordion-item-body-content">'+
              '</div>'+
          '</div>'+
-     '</div>'+
+     '</div>'+*/
  '</div>'+
 
 

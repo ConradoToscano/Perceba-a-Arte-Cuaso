@@ -159,7 +159,7 @@ function conteudo(i){
      '<div class="acordion-item">'+
          '<div class="C acordion-item-header">'+
              '<div class=" acordion-item-header-content">'+
-/*                 'AUTOR'+
+                 'AUTOR'+
              '</div>'+
          '</div>'+
          '<div class="acordion-item-body">' +
@@ -167,7 +167,7 @@ function conteudo(i){
              '</div>'+
          '</div>'+
      '</div>'+
- '</div>'+*/
+ '</div>'+
 
 
   '<div class="final">'+
@@ -212,12 +212,12 @@ function conteudo(i){
   '<li><em>Incorporação:</em> </li>'+ dets[i][14] +
   '<li><em>Exposições:</em> </li>'+ dets[i][15] 
 
-  autor.innerHTML=
+ /*autor.innerHTML=
   '<li><em>Bruno Giorgi</em></li>'+
   '<ul class="autordesc">'+
   '<li><img class="fotoautor" src="../../img/autores/brunogiorgi.jpg"></li>'+
   '<li></li>'+
-  '</ul>'
+  '</ul>'*/
   
   var x = i + 2
   var proximaobra = document.getElementById("proximaobra");
